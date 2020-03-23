@@ -1,11 +1,11 @@
-Description:  A4L RDS Single AZ Template. Requires A4L VPC v3+ Template to run
+Description:  A4L Aurora Cluster Template. Requires A4L VPC v3+ Template and a MySQL 5.6 snapshot to run
   Requires SSM Parameters (as below)
   /A4L/Wordpress/DBName - DB Created
   /A4L/Wordpress/DBUser - User given root permissions
   /A4L/Wordpress/DBPassword - password for that user
 Parameters:
   DatabaseRestoreSnapshot:
-    Description: The snapshot name to restore from - Leave Blank for a new DB, USE ARN for a MIGRATION
+    Description: The snapshot name to restore from - Leave Blank for a new DB, USE ARN for a MIGRATION of a non aurora snapshot or name for aurora
     Type: String
 Conditions:
   NoSnapshot:
