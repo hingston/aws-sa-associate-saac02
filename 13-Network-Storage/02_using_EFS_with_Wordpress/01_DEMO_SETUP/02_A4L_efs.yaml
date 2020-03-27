@@ -24,6 +24,13 @@ Resources:
       SecurityGroups:
         - !ImportValue a4l-vpc1-default-instance-sg
       SubnetId: !ImportValue a4l-vpc1-subnet-appb
+  ElasticFileSystemMountTarget2:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref ElasticFileSystem
+      SecurityGroups:
+        - !ImportValue a4l-vpc1-default-instance-sg
+      SubnetId: !ImportValue a4l-vpc1-subnet-appc
 Outputs:
   ElasticFileSystem:
     Value: !Ref ElasticFileSystem
